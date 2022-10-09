@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.webmagic.boot.mgb.mapper.ItemMapper">
+  <resultMap id="BaseResultMap" type="com.webmagic.boot.mgb.pojo.Item">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="spu" jdbcType="BIGINT" property="spu" />
+    <result column="sku" jdbcType="BIGINT" property="sku" />
+    <result column="title" jdbcType="VARCHAR" property="title" />
+    <result column="price" jdbcType="BIGINT" property="price" />
+    <result column="picture" jdbcType="VARCHAR" property="picture" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="createtime" jdbcType="TIMESTAMP" property="createtime" />
+    <result column="updatetime" jdbcType="TIMESTAMP" property="updatetime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, spu, sku, title, price, picture, url, createtime, updatetime
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from jd_item
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from jd_item
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.webmagic.boot.mgb.pojo.Item">
+    insert into jd_item (id, spu, sku, title, 
+      price, picture, url, 
+      createtime, updatetime)
+    values (#{id,jdbcType=BIGINT}, #{spu,jdbcType=BIGINT}, #{sku,jdbcType=BIGINT}, #{title,jdbcType=VARCHAR}, 
+      #{price,jdbcType=BIGINT}, #{picture,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{updatetime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.webmagic.boot.mgb.pojo.Item">
+    insert into jd_item
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="spu != null">
+        spu,
+      </if>
+      <if test="sku != null">
+        sku,
+      </if>
+      <if test="title != null">
+        title,
+      </if>
+      <if test="price != null">
+        price,
+      </if>
+      <if test="picture != null">
+        picture,
+      </if>
+      <if test="url != null">
+        url,
+      </if>
+      <if test="createtime != null">
+        createtime,
+      </if>
+      <if test="updatetime != null">
+        updatetime,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="spu != null">
+        #{spu,jdbcType=BIGINT},
+      </if>
+      <if test="sku != null">
+        #{sku,jdbcType=BIGINT},
+      </if>
+      <if test="title != null">
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        #{price,jdbcType=BIGINT},
+      </if>
+      <if test="picture != null">
+        #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.webmagic.boot.mgb.pojo.Item">
+    update jd_item
+    <set>
+      <if test="spu != null">
+        spu = #{spu,jdbcType=BIGINT},
+      </if>
+      <if test="sku != null">
+        sku = #{sku,jdbcType=BIGINT},
+      </if>
+      <if test="title != null">
+        title = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null">
+        price = #{price,jdbcType=BIGINT},
+      </if>
+      <if test="picture != null">
+        picture = #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="url != null">
+        url = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="createtime != null">
+        createtime = #{createtime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updatetime != null">
+        updatetime = #{updatetime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.webmagic.boot.mgb.pojo.Item">
+    update jd_item
+    set spu = #{spu,jdbcType=BIGINT},
+      sku = #{sku,jdbcType=BIGINT},
+      title = #{title,jdbcType=VARCHAR},
+      price = #{price,jdbcType=BIGINT},
+      picture = #{picture,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      createtime = #{createtime,jdbcType=TIMESTAMP},
+      updatetime = #{updatetime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>
