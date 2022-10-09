@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.webmagic2.boot.webmagic2.mgb.mapper.JobInfoMapper">
+  <resultMap id="BaseResultMap" type="com.webmagic2.boot.webmagic2.mgb.pojo.JobInfo">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="company_name" jdbcType="VARCHAR" property="companyName" />
+    <result column="company_addr" jdbcType="VARCHAR" property="companyAddr" />
+    <result column="company_info" jdbcType="VARCHAR" property="companyInfo" />
+    <result column="job_name" jdbcType="VARCHAR" property="jobName" />
+    <result column="job_addr" jdbcType="VARCHAR" property="jobAddr" />
+    <result column="job_info" jdbcType="VARCHAR" property="jobInfo" />
+    <result column="salary_min" jdbcType="INTEGER" property="salaryMin" />
+    <result column="salary_max" jdbcType="INTEGER" property="salaryMax" />
+    <result column="url" jdbcType="VARCHAR" property="url" />
+    <result column="time" jdbcType="VARCHAR" property="time" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, company_name, company_addr, company_info, job_name, job_addr, job_info, salary_min,
+    salary_max, url, time
+  </sql>
+  <sql id="Blob_Column_List">
+    company_info, job_info
+  </sql>
+</mapper>
