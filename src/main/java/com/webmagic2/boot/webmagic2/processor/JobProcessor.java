@@ -25,28 +25,28 @@ public class JobProcessor implements PageProcessor {
         //page.getHtml() 返回的是一个Html对象，抽取方法它实现了Selectable接口
 //        page.putField("author",page.getHtml().css("div#J_footer p.mod_service_txt").all());
         System.out.println(page.getHtml());  //打印HTML格式的网页
-//        System.out.println(page);不知道是什么，一堆数字
-        //下面两条测试一下toString()的结果，结果都一样都是查到的整条元素
-//        System.out.println("____________");
-//        System.out.println(page.getHtml().css("div#J_footer p.mod_service_txt"));
-//        System.out.println("______");
-//        System.out.println(page.getHtml().css("div#J_footer p.mod_service_txt").toString());
-//        System.out.println("____________");
-//        List<String> list = page.getHtml().css("div#J_footer li").regex(".*精致.*").all();
-//        System.out.println(list);
-//        System.out.println("____________");
-//        System.out.println(page.getHtml().links().get());
-//        System.out.println("___//get() 和 toString()两个方法都是返回第一个字符串");
-//        System.out.println(page.getHtml().links().toString());
-//        System.out.println("____________all()方法是返回全部找到的元素,从结果看来是返回一个list");
-//        System.out.println(page.getHtml().links().all());
-//        System.out.println("____________获取链接并加入到待抓取的队列中去，当前url应该是不允许爬虫链接估计是");
-//        System.out.println(page.getHtml().links().regex("https://pro.jd.com/mall/active/3bVDLXHdwVmdQksGF8TtS7ocq1NY.*").all());
-//        page.addTargetRequests(page.getHtml().links().regex("https://pro.jd.com/mall/active/3bVDLXHdwVmdQksGF8TtS7ocq1NY.*").all());
-//        page.addTargetRequests(page.getHtml().links().regex("https://pro.jd.com/mall/active/3bVDLXHdwVmdQksGF8TtS7ocq1NY.*").all());
-//        page.addTargetRequests(page.getHtml().links().regex("https://pro.jd.com/mall/active/3bVDLXHdwVmdQksGF8TtS7ocq1NY.*").all());
-////        System.out.println(page.getHtml().css("div"));
-//        System.out.println(page.getHtml());
+        System.out.println(page);//不知道是什么，一堆数字
+//        下面两条测试一下toString()的结果，结果都一样都是查到的整条元素
+        System.out.println("____________");
+        System.out.println(page.getHtml().css("div#J_footer p.mod_service_txt"));
+        System.out.println("______");
+        System.out.println(page.getHtml().css("div#J_footer p.mod_service_txt").toString());
+        System.out.println("____________");
+        List<String> list = page.getHtml().css("div#J_footer li").regex(".*精致.*").all();
+        System.out.println(list);
+        System.out.println("____________");
+        System.out.println(page.getHtml().links().get());
+        System.out.println("___//get() 和 toString()两个方法都是返回第一个字符串");
+        System.out.println(page.getHtml().links().toString());
+        System.out.println("____________all()方法是返回全部找到的元素,从结果看来是返回一个list");
+        System.out.println(page.getHtml().links().all());
+        System.out.println("____________获取链接并加入到待抓取的队列中去，当前url应该是不允许爬虫链接估计是");
+        System.out.println(page.getHtml().links().regex("https://pro.jd.com/mall/active/3bVDLXHdwVmdQksGF8TtS7ocq1NY.*").all());
+        page.addTargetRequests(page.getHtml().links().regex("https://pro.jd.com/mall/active/3bVDLXHdwVmdQksGF8TtS7ocq1NY.*").all());
+        page.addTargetRequests(page.getHtml().links().regex("https://pro.jd.com/mall/active/3bVDLXHdwVmdQksGF8TtS7ocq1NY.*").all());
+        page.addTargetRequests(page.getHtml().links().regex("https://pro.jd.com/mall/active/3bVDLXHdwVmdQksGF8TtS7ocq1NY.*").all());
+//        System.out.println(page.getHtml().css("div"));
+        System.out.println(page.getHtml());
 
     }
 
